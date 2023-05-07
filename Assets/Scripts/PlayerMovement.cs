@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity;
     private float previousHorizontalInput;
     private bool isFlipping = false;
-
+   
     void Start()
     {
         controller = GetComponent<CharacterController>();
