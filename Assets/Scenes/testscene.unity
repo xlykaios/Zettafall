@@ -203,7 +203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22940053}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -47.19883, y: -41.849083, z: -31.593243}
+  m_LocalPosition: {x: -56.8, y: 18, z: 83.7}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1034,7 +1034,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707669794}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 87, y: 12, z: -82.8}
+  m_LocalPosition: {x: 21, y: 12, z: -82.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1060,9 +1060,9 @@ MonoBehaviour:
     width: 0.2
   m_Looped: 0
   m_Waypoints:
-  - position: {x: 113.40367, y: 39.12863, z: 29.273731}
+  - position: {x: 95.44369, y: 39.12863, z: 6.094513}
     roll: 0
-  - position: {x: 301.95737, y: 35.457714, z: 44.24452}
+  - position: {x: 310.4729, y: 35.457714, z: 44.24452}
     roll: 0
 --- !u!1 &924191673
 GameObject:
@@ -1192,7 +1192,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 8.13
+  near clip plane: 16.75
   far clip plane: 500
   field of view: 49.8
   orthographic: 0
@@ -1219,8 +1219,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.08899633, y: 0.7538679, z: -0.10441569, w: -0.64254206}
-  m_LocalPosition: {x: 157.48683, y: 51.02476, z: 23.827091}
+  m_LocalRotation: {x: -0.13621566, y: 0.70118845, z: -0.13926262, w: -0.685847}
+  m_LocalPosition: {x: 96.864365, y: 108.71486, z: 117.44956}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1350,7 +1350,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103441794}
-  m_LocalRotation: {x: 0.020927245, y: 0.9524466, z: -0.06723414, w: 0.29645777}
+  m_LocalRotation: {x: -0.038462825, y: 0.8780238, z: 0.071600065, w: 0.47166544}
   m_LocalPosition: {x: -127.62936, y: 43.33392, z: 199.59993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1741,7 +1741,6 @@ GameObject:
   - component: {fileID: 1357073345}
   - component: {fileID: 1357073346}
   - component: {fileID: 1357073347}
-  - component: {fileID: 1357073348}
   m_Layer: 0
   m_Name: CMvcam1
   m_TagString: Untagged
@@ -1756,8 +1755,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357073344}
-  m_LocalRotation: {x: -0.08899633, y: 0.7538679, z: -0.10441569, w: -0.64254206}
-  m_LocalPosition: {x: 159.00002, y: 51.270817, z: 23.01693}
+  m_LocalRotation: {x: -0.13621566, y: 0.70118845, z: -0.13926262, w: -0.685847}
+  m_LocalPosition: {x: 98.37754, y: 108.960915, z: 116.639404}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1788,7 +1787,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 49.8
     OrthographicSize: 5
-    NearClipPlane: 8.13
+    NearClipPlane: 16.75
     FarClipPlane: 500
     Dutch: 0
     ModeOverride: 0
@@ -1846,29 +1845,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &1357073348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1357073344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a200b19ca1a9685429ed7e043c28e904, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Resolution: 20
-  m_Appearance:
-    pathColor: {r: 0, g: 1, b: 0, a: 1}
-    inactivePathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    width: 0.2
-  m_Looped: 0
-  m_Waypoints:
-  - position: {x: 113, y: 40, z: 29}
-    roll: 0
-  - position: {x: 301, y: 35, z: 44}
-    roll: 0
 --- !u!1 &1376948101
 GameObject:
   m_ObjectHideFlags: 3
@@ -2468,9 +2444,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 707669796}
-  m_PathPosition: 0
+  m_PathPosition: 0.4688669
   m_PositionUnits: 2
-  m_PathOffset: {x: 100.35556, y: -0.16012987, z: -15.57848}
+  m_PathOffset: {x: 100.35556, y: 59.3, z: -15.57848}
   m_XDamping: 0.2
   m_YDamping: 0.2
   m_ZDamping: 0.2

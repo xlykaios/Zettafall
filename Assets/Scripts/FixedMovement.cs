@@ -12,6 +12,7 @@ public class FixedMovement : MonoBehaviour
     public float jumpSpeed = 10f;
     public float gravity = -9.81f;
     private Vector3 trackDirection;
+    [SerializeField] Transform cacca;
 
     private CharacterController controller;
     private Vector3 playerInput;
