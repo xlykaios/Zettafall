@@ -557,7 +557,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632140506}
-  m_LocalRotation: {x: 0.074321374, y: -0.7686251, z: 0.09084233, w: 0.6288398}
+  m_LocalRotation: {x: 0.07432135, y: -0.7686251, z: 0.0908423, w: 0.6288398}
   m_LocalPosition: {x: 109.30001, y: 70.9, z: 57.499992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1124,7 +1124,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133479117}
-  m_LocalRotation: {x: 0.074321374, y: -0.7686251, z: 0.09084233, w: 0.6288398}
+  m_LocalRotation: {x: 0.07432135, y: -0.7686251, z: 0.0908423, w: 0.6288398}
   m_LocalPosition: {x: 109.30001, y: 70.9, z: 57.499992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2334,6 +2334,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 70
       objectReference: {fileID: 0}
+    - target: {fileID: 6115944658019544983, guid: 70308b9c4f36f41d5b8fd30e0fb3408f, type: 3}
+      propertyPath: actualCamera
+      value: 
+      objectReference: {fileID: 632140508}
     - target: {fileID: 6115944658019544989, guid: 70308b9c4f36f41d5b8fd30e0fb3408f, type: 3}
       propertyPath: m_Name
       value: Capsule

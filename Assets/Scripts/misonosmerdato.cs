@@ -14,6 +14,7 @@ public class misonosmerdato : MonoBehaviour
     private Vector3 velocity;
     private float previousHorizontalInput;
     private bool isFlipping = false;
+    public Camera actualCamera;
     Vector3 Cforward;
     Vector3 Cright;
    
@@ -61,19 +62,24 @@ public class misonosmerdato : MonoBehaviour
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
 
-        Cforward = Camera.current.transform.forward;
-        Cright = Camera.current.transform.right;
-        Cforward.y = 0;
-        Cright.y = 0;
-        Cforward = Cforward.normalized;
-        Cright = Cright.normalized;
+        if (actualCamera != null)
+        {
+            Cforward = actualCamera.transform.forward;
+            Cright = actualCamera.transform.right;
+            Cforward.y = 0;
+            Cright.y = 0;
+            Cforward = Cforward.normalized;
+            Cright = Cright.normalized;
 
-        Vector3 forwardRelativeVerticalInput = moveVertical * Cforward;
-        Vector3 rightRelativeHorizontalInput = moveHorizontal * Cright;
+            Vector3 forwardRelativeVerticalInput = moveVertical * Cforward;
+            Vector3 rightRelativeHorizontalInput = moveHorizontal * Cright;
 
-        Vector3 cameraRealtiveMovement = forwardRelativeVerticalInput + rightRelativeHorizontalInput;
+            Vector3 cameraRealtiveMovement = forwardRelativeVerticalInput + rightRelativeHorizontalInput;
 
-        controller.Move((cameraRealtiveMovement * moveSpeed + velocity) * Time.deltaTime);
+            controller.Move((cameraRealtiveMovement * moveSpeed + velocity) * Time.deltaTime);
+        } else {
+            print("null camera");
+        }
     }
 
     
