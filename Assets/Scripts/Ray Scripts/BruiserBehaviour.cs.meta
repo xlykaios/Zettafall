@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 060905f92067749d7a45a8b221c57e69
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - agent: {instanceID: 0}
+  - player: {instanceID: 0}
+  - attackPrefab: {fileID: 9016010728259738686, guid: 296bcbcaea03444f6915ec9a4493616c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
