@@ -1,32 +1,68 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CameraTrigger : MonoBehaviour
 {
-    public Camera cameraToSwitchTo;
-    private Camera ActualCamera;
+
+    [SerializeField]
+    public string camera1;
+    public string camera2;
+    public InputAction action;
+    public Animator animator;
+
+    private bool didChangeHappen = true;
+
+
+    
+
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    private void OnEnable()
+    {
+        action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        action.Disable();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        cameraToSwitchTo.enabled = false;
-        ActualCamera = Camera.current;
+
+        /*
+          action.performed += _ => SwitchState();
+       
+
+          cameraToSwitchTo.enabled = false;
+          ActualCamera = Camera.current;
+        */
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void SwitchState() {
+        if (didChangeHappen) {
+            animator.Play("Camera2State");
+        } else {
+            animator.Play("Camera2State");
+        }
+        didChangeHappen = !didChangeHappen;
     }
+   
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            
-            cameraToSwitchTo.enabled = true;
+            print("triggered in");
+            SwitchState();
+           // cameraToSwitchTo.enabled = true;
             
         }
     }
@@ -35,8 +71,9 @@ public class CameraTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-          
-            cameraToSwitchTo.enabled = false;
+            print("TriggerOut");
+            SwitchState();
+            //cameraToSwitchTo.enabled = false;
         }
     }
 }
