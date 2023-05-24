@@ -10,6 +10,7 @@ public class CameraTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         cameraToSwitchTo.enabled = false;
         ActualCamera = Camera.current;
     }
@@ -34,6 +35,7 @@ public class CameraTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+          
             cameraToSwitchTo.enabled = false;
         }
     }

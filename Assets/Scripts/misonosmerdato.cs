@@ -62,10 +62,10 @@ public class misonosmerdato : MonoBehaviour
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
 
-        if (actualCamera != null)
+        if (Camera.main != null)
         {
-            Cforward = actualCamera.transform.forward;
-            Cright = actualCamera.transform.right;
+            Cforward =  Camera.main.transform.forward;
+            Cright = Camera.main.transform.right;
             Cforward.y = 0;
             Cright.y = 0;
             Cforward = Cforward.normalized;

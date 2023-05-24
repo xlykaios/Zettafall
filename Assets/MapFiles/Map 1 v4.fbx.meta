@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Bridge_Material
+    second: {fileID: 2100000, guid: e6680a46bc27a4a638f69fd490062b6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Cave_Walls
     second: {fileID: 2100000, guid: 7d5bf7c3aaa5749268d32b6cd9af1cf0, type: 2}
   - first:
