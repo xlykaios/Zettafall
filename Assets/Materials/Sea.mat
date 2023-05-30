@@ -114,11 +114,19 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
+<<<<<<< Updated upstream
     - _FoamAmount: 1000
     - _FoamCutoff: 10
     - _FoamDensity: 5000
     - _FoamLines: 5
     - _FoamSpeed: 0.0005
+=======
+    - _FoamAmount: 10
+    - _FoamCutoff: 1
+    - _FoamDensity: 540
+    - _FoamLines: 5
+    - _FoamSpeed: 1
+>>>>>>> Stashed changes
     - _GlossMapScale: 1
     - _Glossiness: 0.641
     - _GlossyReflections: 1
@@ -129,9 +137,15 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+<<<<<<< Updated upstream
     - _RippleDensity: 1000
     - _RippleLines: 3
     - _RippleSpeed: 0.5
+=======
+    - _RippleDensity: 100
+    - _RippleLines: 5
+    - _RippleSpeed: 1
+>>>>>>> Stashed changes
     - _Shininess: 0.078125
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
@@ -147,7 +161,13 @@ Material:
     - _Color: {r: 0.45768067, g: 0.6051976, b: 0.8018868, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< Updated upstream
     - _RippleColor: {r: 0.5882353, g: 0.78919214, b: 0.8509804, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _WaterColor: {r: 0, g: 0.42532486, b: 0.8773585, a: 0}
+=======
+    - _RippleColor: {r: 0.58873266, g: 0.7117457, b: 0.8490566, a: 1}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _WaterColor: {r: 0.28627455, g: 0.52513796, b: 0.85882354, a: 0}
+>>>>>>> Stashed changes
   m_BuildTextureStacks: []

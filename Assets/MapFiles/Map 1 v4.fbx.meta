@@ -1,5 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:Assets/MapFiles/Map 1 v4.fbx.meta
 guid: 00d6ae6180d0144189e3a503c26f7291
+========
+guid: 1ee4f0cf3828f49dbbf9ee14ee3f84f3
+>>>>>>>> Stashed changes:Assets/MapFiles/Map 1 v3.fbx.meta
+=======
+<<<<<<<< Updated upstream:Assets/MapFiles/Map 1 v5.fbx.meta
+guid: 4416493e1174c40969702f0ddb0d36f7
+========
+guid: 76e9b91d1e4624f5e838286eb0da0a8c
+>>>>>>>> Stashed changes:Assets/MapFiles/Map 1 v4.fbx.meta
+>>>>>>> Stashed changes
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,36 +19,101 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+<<<<<<< Updated upstream
       name: Bounds_Transparency
     second: {fileID: 2100000, guid: e15f8b99b13844198a9f70f82819fbd2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+<<<<<<<< Updated upstream:Assets/MapFiles/Map 1 v4.fbx.meta
+=======
+<<<<<<<< Updated upstream:Assets/MapFiles/Map 1 v5.fbx.meta
+      name: Black_Emissive
+    second: {fileID: 2100000, guid: 2af128e2b44fb4ba6a79c137b4e3be89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+>>>>>>> Stashed changes
       name: Bridge_Material
     second: {fileID: 2100000, guid: e6680a46bc27a4a638f69fd490062b6d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+<<<<<<< Updated upstream
+========
+>>>>>>>> Stashed changes:Assets/MapFiles/Map 1 v3.fbx.meta
+=======
+      name: Bridge_Small_Material
+    second: {fileID: 2100000, guid: e6680a46bc27a4a638f69fd490062b6d, type: 2}
+========
+      name: Bounds_Transparency
+    second: {fileID: 2100000, guid: e15f8b99b13844198a9f70f82819fbd2, type: 2}
+>>>>>>>> Stashed changes:Assets/MapFiles/Map 1 v4.fbx.meta
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+>>>>>>> Stashed changes
       name: Cave_Walls
     second: {fileID: 2100000, guid: 7d5bf7c3aaa5749268d32b6cd9af1cf0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:Assets/MapFiles/Map 1 v4.fbx.meta
+=======
+<<<<<<<< Updated upstream:Assets/MapFiles/Map 1 v5.fbx.meta
+      name: Kamtree_Material
+    second: {fileID: 2100000, guid: f07110f6adf304d2dae26c6e42b81243, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sea_Material
+    second: {fileID: 2100000, guid: d6d269cd1bf5f48648894cf4b5ed3f10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Solariel_Emissive
+    second: {fileID: 2100000, guid: d40803ea69f8f4a43afee96d390c1c91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+>>>>>>> Stashed changes
       name: Temple_Stone
     second: {fileID: 2100000, guid: 7d5bf7c3aaa5749268d32b6cd9af1cf0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+<<<<<<< Updated upstream
       name: Temple_Stone_3
+=======
+      name: Temple_Stone_2
+>>>>>>> Stashed changes
     second: {fileID: 2100000, guid: 7d5bf7c3aaa5749268d32b6cd9af1cf0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+<<<<<<< Updated upstream
+========
+>>>>>>>> Stashed changes:Assets/MapFiles/Map 1 v3.fbx.meta
+=======
+      name: Temple_Stone_3
+========
+      name: Temple_Emissive
+>>>>>>>> Stashed changes:Assets/MapFiles/Map 1 v4.fbx.meta
+    second: {fileID: 2100000, guid: 7d5bf7c3aaa5749268d32b6cd9af1cf0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+>>>>>>> Stashed changes
       name: Terrain_Grass
     second: {fileID: 2100000, guid: 22c8c3ec25c2c444eb23a06321062dc9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:Assets/MapFiles/Map 1 v4.fbx.meta
+=======
+>>>>>>> Stashed changes
       name: Terrain_Navmesh
     second: {fileID: 2100000, guid: e15f8b99b13844198a9f70f82819fbd2, type: 2}
   - first:
@@ -44,6 +121,23 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Terrain_Sides
     second: {fileID: 2100000, guid: b8bfbf68e8c294111a97fe6f3775cf6d, type: 2}
+<<<<<<< Updated upstream
+========
+      name: Terrain_Sides
+    second: {fileID: 2100000, guid: b8bfbf68e8c294111a97fe6f3775cf6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree_Leaves
+    second: {fileID: 2100000, guid: f3e5deba4ae00446991183d51e8d5790, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree_Trunk
+    second: {fileID: 2100000, guid: f3e5deba4ae00446991183d51e8d5790, type: 2}
+>>>>>>>> Stashed changes:Assets/MapFiles/Map 1 v3.fbx.meta
+=======
+>>>>>>> Stashed changes
   materials:
     materialImportMode: 2
     materialName: 0
