@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class UIManager : MonoBehaviour
 {
@@ -7,9 +8,38 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI promptText;
     public GameObject textBoxPanel;
 
+    private Dictionary<SignPost, float> signpostsInRange = new Dictionary<SignPost, float>();
+
     void Start()
     {
         textBoxPanel.SetActive(false); // Hide the panel at the start
+    }
+
+    public void RegisterSignPost(SignPost signPost, float distance)
+    {
+        signpostsInRange[signPost] = distance;
+        UpdatePromptText();
+    }
+
+    public void UnregisterSignPost(SignPost signPost)
+    {
+        if (signpostsInRange.ContainsKey(signPost))
+        {
+            signpostsInRange.Remove(signPost);
+            UpdatePromptText();
+        }
+    }
+
+    private void UpdatePromptText()
+    {
+        if (signpostsInRange.Count > 0)
+        {
+            ShowPromptText("Press E to read");
+        }
+        else
+        {
+            HidePromptText();
+        }
     }
 
     public void ShowSignPostText(string message)

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SignPost : MonoBehaviour
 {
-    public GameObject player; 
-    public UIManager uiManager; // Reference to the UIManager
+    public GameObject player;
+    public UIManager uiManager;
     public string message = "Default signpost message";
     public float readDistance = 3f;
     public KeyCode readKey = KeyCode.E;
@@ -22,35 +22,32 @@ public class SignPost : MonoBehaviour
     {
         float distance = Vector3.Distance(player.transform.position, transform.position);
 
-        if(distance <= readDistance && !isReading) 
+        if(distance <= readDistance)
         {
-            uiManager.ShowPromptText("Press E to read"); // Show the prompt
+            uiManager.RegisterSignPost(this, distance);
+
+            if (Input.GetKeyDown(readKey))
+            {
+                isReading = !isReading;
+
+                if (isReading)
+                {
+                    uiManager.ShowSignPostText(message); // Show the signpost text
+                }
+                else
+                {
+                    uiManager.HideSignPostText(); // Hide the signpost text
+                }
+            }
         }
         else
         {
-            uiManager.HidePromptText(); // Hide the prompt
-        }
-
-        if(Input.GetKeyDown(readKey) && distance <= readDistance)
-        {
-            isReading = !isReading;
-
-            if(isReading)
+            uiManager.UnregisterSignPost(this);
+            if (isReading)
             {
-                uiManager.HidePromptText(); // Hide the prompt
-                uiManager.ShowSignPostText(message); // Show the signpost text
-            }
-            else
-            {
-                uiManager.ShowPromptText("Press E to read"); // Show the prompt
+                isReading = false;
                 uiManager.HideSignPostText(); // Hide the signpost text
             }
-        }
-
-        if(distance > readDistance && isReading)
-        {
-            isReading = false;
-            uiManager.HideSignPostText(); // Hide the signpost text
         }
     }
 }
