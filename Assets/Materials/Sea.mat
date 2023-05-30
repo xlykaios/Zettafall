@@ -114,11 +114,11 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _FoamAmount: 750
+    - _FoamAmount: 1000
     - _FoamCutoff: 10
-    - _FoamDensity: 1000
+    - _FoamDensity: 5000
     - _FoamLines: 5
-    - _FoamSpeed: 0.001
+    - _FoamSpeed: 0.0005
     - _GlossMapScale: 1
     - _Glossiness: 0.641
     - _GlossyReflections: 1
@@ -129,7 +129,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RippleDensity: 100
+    - _RippleDensity: 1000
     - _RippleLines: 3
     - _RippleSpeed: 0.5
     - _Shininess: 0.078125
