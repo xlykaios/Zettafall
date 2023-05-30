@@ -93,7 +93,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _AtmosphereThickness: 3.46
+    - _AtmosphereThickness: 1.6
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
@@ -104,7 +104,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Exposure: 0.89
+    - _Exposure: 1.21
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -118,8 +118,8 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SunDisk: 2
-    - _SunSize: 0.29
-    - _SunSizeConvergence: 3.3
+    - _SunSize: 0.327
+    - _SunSizeConvergence: 4.81
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
@@ -127,7 +127,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GroundColor: {r: 0.509434, g: 0.41571736, b: 0.41571736, a: 0.16470589}
-    - _SkyTint: {r: 0.7169812, g: 0.65272343, b: 0.65272343, a: 0.6039216}
+    - _GroundColor: {r: 0.3773585, g: 0.34353864, b: 0.34353864, a: 0.92941177}
+    - _SkyTint: {r: 0.6037736, g: 0.5592414, b: 0.48131007, a: 0.36078432}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
