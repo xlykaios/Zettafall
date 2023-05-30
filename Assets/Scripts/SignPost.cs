@@ -5,63 +5,54 @@ using TMPro;
 
 public class SignPost : MonoBehaviour
 {
-    public GameObject player; // Reference to the player
-    public TextMeshProUGUI signPostText; // Reference to the TextMeshProUGUI to show the signpost's message
-    public TextMeshProUGUI promptText; // Reference to the TextMeshProUGUI to show the prompt to read
-    public string message = "Default signpost message"; // The message that will be displayed on the signpost
-    public float readDistance = 3f; // How close the player needs to be to read the signpost
-    public KeyCode readKey = KeyCode.E; // The key the player presses to read the signpost
+    public GameObject player; 
+    public TextMeshProUGUI signPostText;
+    public TextMeshProUGUI promptText;
+    public GameObject textBoxPanel; // Reference to your Panel
+    public string message = "Default signpost message";
+    public float readDistance = 3f;
+    public KeyCode readKey = KeyCode.E;
+
+    private bool isReading = false;
 
     private void Start()
     {
-        if(player == null)
-        {
-            Debug.LogError("Player GameObject is not assigned in the SignPost script.");
-        }
-
-        if(signPostText == null)
-        {
-            Debug.LogError("SignPostText is not assigned in the SignPost script.");
-        }
-
-        if(promptText == null)
-        {
-            Debug.LogError("PromptText is not assigned in the SignPost script.");
-        }
+        signPostText.text = "";
+        promptText.text = "";
+        textBoxPanel.SetActive(false); // Set the Panel inactive
     }
 
     private void Update()
     {
-        // Check the distance between the player and the signpost
         float distance = Vector3.Distance(player.transform.position, transform.position);
 
-        // Log the distance to check if this part is working correctly
-        Debug.Log("Distance to signpost: " + distance);
-
-        // If the player is close enough
         if(distance <= readDistance)
         {
-            // Show the prompt to read
-            promptText.text = "Press E to read";
-            
-            // If the player presses the read key
             if(Input.GetKeyDown(readKey))
             {
-                // Set the text of the signPostText to the message
+                isReading = !isReading; 
+
+                // Set the Panel active or inactive depending on whether the player is reading
+                textBoxPanel.SetActive(isReading);
+            }
+
+            if(isReading)
+            {
                 signPostText.text = message;
+                promptText.text = ""; // Hide the prompt while reading
+            }
+            else 
+            {
+                signPostText.text = "";
+                promptText.text = "Press E to read"; // Show the prompt when not reading
             }
         }
         else
         {
-            // If the player is too far away, clear the signpost text and the prompt text
             signPostText.text = "";
             promptText.text = "";
-        }
-
-        // If the player releases the read key, clear the signpost text
-        if(Input.GetKeyUp(readKey))
-        {
-            signPostText.text = "";
+            isReading = false; 
+            textBoxPanel.SetActive(false);
         }
     }
 }
