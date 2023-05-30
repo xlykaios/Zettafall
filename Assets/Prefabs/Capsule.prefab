@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8977057710184593447, guid: 00d6ae6180d0144189e3a503c26f7291, type: 3}
+  - {fileID: 2100000, guid: 7d5bf7c3aaa5749268d32b6cd9af1cf0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -168,3 +168,4 @@ MonoBehaviour:
   jumpForce: 60
   gravity: -200
   flipDuration: 0.2
+  actualCamera: {fileID: 0}
