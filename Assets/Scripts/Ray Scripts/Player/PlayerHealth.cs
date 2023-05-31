@@ -10,13 +10,14 @@ public class PlayerHealth : Health
     public Sprite emptyHeart;
     public float invulnerabilityTime = 1f;
     public float flashingInterval = 0.1f;
-
+    public HealthBar_Script healthbar;
     private float invulnerabilityTimer;
     private MeshRenderer spriteRenderer;
 
     void Start()
     {
         maxHealth = hp;
+        healthbar.MaxHealthSet(maxHealth);
         UpdateHearts();
         spriteRenderer = GetComponent<MeshRenderer>();
     }
@@ -34,6 +35,7 @@ public class PlayerHealth : Health
         if (invulnerabilityTimer <= 0)
         {
             hp -= damage;
+            healthbar.HealthbarUpdate(hp);
             invulnerabilityTimer = invulnerabilityTime;
 
             if (hp <= 0)
