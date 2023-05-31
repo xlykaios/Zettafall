@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[ExecuteInEditMode]
+
 [RequireComponent(typeof(Light))]
 public class DayNightCycle : MonoBehaviour
 {
