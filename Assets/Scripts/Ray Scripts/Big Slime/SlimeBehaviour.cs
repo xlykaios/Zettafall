@@ -14,6 +14,9 @@ public class SlimeBehaviour : MonoBehaviour
     private float jumpHeight;
     private float speed;
     private bool isFall;
+    private Collider hitbox;
+    //aggro
+    public float aggroRange;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,10 @@ public class SlimeBehaviour : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        CheckState();
+    }
+    void CheckState()
     {
         timer -= Time.deltaTime;
         if(timer <= 0 && !isJump)
@@ -70,5 +77,22 @@ public class SlimeBehaviour : MonoBehaviour
             Instantiate(shockwave, transform.position - new Vector3(0, transform.localScale.y/2, 0), Quaternion.identity);
         }
     }
-
+    void OnTriggerEnter(Collider collider)
+    {
+        if(collider.tag.Equals("Player"))
+        {
+            misonosmerdato blockPlayer = player.GetComponent<misonosmerdato>();
+            blockPlayer.enabled = false;
+        }
+        
+    }
+    void OnTriggerExit(Collider collider)
+    {
+        if(collider.tag.Equals("Player"))
+        {
+            misonosmerdato blockPlayer = player.GetComponent<misonosmerdato>();
+            blockPlayer.enabled = true; 
+        }
+          
+    }
 }
