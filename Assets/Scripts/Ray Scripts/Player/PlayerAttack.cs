@@ -7,15 +7,19 @@ public class PlayerAttack : MonoBehaviour
     public KeyCode attackKey = KeyCode.Space;
     public GameObject swordPrefab;
     public GameObject specialPrefab;
+    public AudioClip attackClip; // AudioClip to play. Set this in the Inspector.
+    private AudioSource audioSource; // AudioSource component
     private Animator anim;
     private float attackTimer;
     private int comboCounter;
     public float minComboTime = 0.5f;
     public float maxComboTime = 1f;
     public int maxCombo = 3;
+
     void Start()
     {
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>(); // Get the AudioSource component
     }
 
     void Update()
@@ -29,24 +33,24 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
-        if(attackTimer > maxComboTime && comboCounter > 0)
+        if (attackTimer > maxComboTime && comboCounter > 0)
         {
             comboCounter = 0;
         }
-        if(attackTimer > maxComboTime)
+        if (attackTimer > maxComboTime)
         {
             attackTimer = 0f;
-            comboCounter ++;
+            comboCounter++;
             return;
         }
-        if(attackTimer > minComboTime && comboCounter == maxCombo)
+        if (attackTimer > minComboTime && comboCounter == maxCombo)
         {
             UseSpecialAttack();
             comboCounter = 0;
             attackTimer = 0f;
             return;
         }
-        if(attackTimer > minComboTime && comboCounter > 0)
+        if (attackTimer > minComboTime && comboCounter > 0)
         {
             UseAttack();
             comboCounter++;
@@ -54,14 +58,17 @@ public class PlayerAttack : MonoBehaviour
             return;
         }
     }
+
     private void UseAttack()
     {
-        Instantiate(swordPrefab, GameObject.Find("AttackForward").GetComponent<Transform>().position, Quaternion.identity);      
+        Instantiate(swordPrefab, GameObject.Find("AttackForward").GetComponent<Transform>().position, Quaternion.identity); 
+        audioSource.PlayOneShot(attackClip); // Play the attack sound
     }
 
     private void UseSpecialAttack()
     {
-        Instantiate(specialPrefab, GameObject.Find("AttackForward").GetComponent<Transform>().position, Quaternion.identity);      
+        Instantiate(specialPrefab, GameObject.Find("AttackForward").GetComponent<Transform>().position, Quaternion.identity); 
+        audioSource.PlayOneShot(attackClip); // Play the attack sound
     }
 
     /*
@@ -82,5 +89,7 @@ public class PlayerAttack : MonoBehaviour
                 enemyHealth.TakeDamage(damage);
             }
         }
-    }*/
+    }
+    */
 }
+
