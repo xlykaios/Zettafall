@@ -28,7 +28,9 @@ public class ZoneTrigger : MonoBehaviour
             {
                 // The player hasn't visited the zone before.
                 StartCoroutine(DisplayMainText());
-                audioSource.PlayOneShot(zoneClip); // Play the zone audio.
+                audioSource.clip = zoneClip;
+                audioSource.Play(); 
+                StartCoroutine(FadeAudioSource.StartFade(audioSource, fadeTime, 1f)); // fade in
                 hasVisited = true;
             }
             else
@@ -37,6 +39,14 @@ public class ZoneTrigger : MonoBehaviour
                 visitedText.text = zoneName;
                 StartCoroutine(FadeTextInAndOut(visitedText, fadeTime, fadeTime));
             }
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            StartCoroutine(FadeAudioSource.StartFade(audioSource, fadeTime, 0f)); // fade out
         }
     }
 
@@ -80,4 +90,20 @@ public class ZoneTrigger : MonoBehaviour
     }
 }
 
+public static class FadeAudioSource
+{
+    public static IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        float start = audioSource.volume;
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
+            yield return null;
+        }
+        yield break;
+    }
+}
 
