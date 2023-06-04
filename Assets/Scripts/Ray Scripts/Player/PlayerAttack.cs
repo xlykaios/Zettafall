@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject swordPrefab;
     public GameObject specialPrefab;
     public AudioClip attackClip; // AudioClip to play. Set this in the Inspector.
+    public float attackVolume = 0.5f; // Volume of attack sound. Set this in the Inspector.
     private AudioSource audioSource; // AudioSource component
     private Animator anim;
     private float attackTimer;
@@ -33,24 +34,24 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
-        if (attackTimer > maxComboTime && comboCounter > 0)
+        if(attackTimer > maxComboTime && comboCounter > 0)
         {
             comboCounter = 0;
         }
-        if (attackTimer > maxComboTime)
+        if(attackTimer > maxComboTime)
         {
             attackTimer = 0f;
-            comboCounter++;
+            comboCounter ++;
             return;
         }
-        if (attackTimer > minComboTime && comboCounter == maxCombo)
+        if(attackTimer > minComboTime && comboCounter == maxCombo)
         {
             UseSpecialAttack();
             comboCounter = 0;
             attackTimer = 0f;
             return;
         }
-        if (attackTimer > minComboTime && comboCounter > 0)
+        if(attackTimer > minComboTime && comboCounter > 0)
         {
             UseAttack();
             comboCounter++;
@@ -62,13 +63,13 @@ public class PlayerAttack : MonoBehaviour
     private void UseAttack()
     {
         Instantiate(swordPrefab, GameObject.Find("AttackForward").GetComponent<Transform>().position, Quaternion.identity); 
-        audioSource.PlayOneShot(attackClip); // Play the attack sound
+        audioSource.PlayOneShot(attackClip, attackVolume); // Play the attack sound
     }
 
     private void UseSpecialAttack()
     {
         Instantiate(specialPrefab, GameObject.Find("AttackForward").GetComponent<Transform>().position, Quaternion.identity); 
-        audioSource.PlayOneShot(attackClip); // Play the attack sound
+        audioSource.PlayOneShot(attackClip, attackVolume); // Play the attack sound
     }
 
     /*
@@ -89,7 +90,6 @@ public class PlayerAttack : MonoBehaviour
                 enemyHealth.TakeDamage(damage);
             }
         }
-    }
-    */
+    }*/
 }
 

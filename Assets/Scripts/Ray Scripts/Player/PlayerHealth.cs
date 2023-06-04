@@ -8,9 +8,12 @@ public class PlayerHealth : Health
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+    public AudioClip hitSound; // AudioClip to play when hit. Set this in the Inspector.
+    public float hitSoundVolume = 1f; // Default volume is max
+    private AudioSource audioSource; // AudioSource component
     public float invulnerabilityTime = 1f;
     public float flashingInterval = 0.1f;
-
+    
     private float invulnerabilityTimer;
     private MeshRenderer spriteRenderer;
 
@@ -19,6 +22,10 @@ public class PlayerHealth : Health
         maxHealth = hp;
         UpdateHearts();
         spriteRenderer = GetComponent<MeshRenderer>();
+        // Get the AudioSource component
+        audioSource = GetComponent<AudioSource>();
+        // Set the initial volume
+        audioSource.volume = hitSoundVolume;
     }
 
     void Update()
@@ -34,6 +41,7 @@ public class PlayerHealth : Health
         if (invulnerabilityTimer <= 0)
         {
             hp -= damage;
+            audioSource.PlayOneShot(hitSound); // Play the hit sound
             invulnerabilityTimer = invulnerabilityTime;
 
             if (hp <= 0)
