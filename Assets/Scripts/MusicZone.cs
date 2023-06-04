@@ -49,7 +49,7 @@ public class MusicZone : MonoBehaviour
     {
         float startVolume = 0;
 
-        while (audioSource.volume < 1)
+        while (audioSource.volume < 0)
         {
             audioSource.volume += startVolume * Time.deltaTime / time;
             yield return null;
