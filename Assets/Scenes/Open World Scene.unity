@@ -1113,7 +1113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9105427590808808249, guid: ecbe8d921cac04723a4cfc6b3fc4a888, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 325
+      value: 347
       objectReference: {fileID: 0}
     - target: {fileID: 9105427590808808249, guid: ecbe8d921cac04723a4cfc6b3fc4a888, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2315,7 +2315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9121278379942430741, guid: 43242d4b6e43e47419097c73b5229a6d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 352
+      value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 9121278379942430741, guid: 43242d4b6e43e47419097c73b5229a6d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9550,7 +9550,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1112240392}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4aad4ebfa27374e19b5e7de5b483cde9, type: 3}
   m_Name: 
@@ -9558,6 +9558,7 @@ MonoBehaviour:
   sphearPrefab: {fileID: 7149739647279757585, guid: 9b4b7c2a3e0b1411a8e63629e36694f5, type: 3}
   attackKey: 106
   attackCooldown: 0.3
+  sphearSound: {fileID: 8300000, guid: 4ad240a3abafc431b9431458c5e723a9, type: 3}
 --- !u!114 &1324787456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9565,7 +9566,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1112240392}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffcede7718a1748fb900c7a2e124fe22, type: 3}
   m_Name: 
@@ -9577,10 +9578,10 @@ MonoBehaviour:
   swordPrefab: {fileID: 1758796221311513282, guid: f58737d48ac804a9a9ada125e17bb6d9, type: 3}
   specialPrefab: {fileID: 3839066192316312672, guid: 754d77624592b4817bda823d7d21faf3, type: 3}
   attackClip: {fileID: 8300000, guid: 0aabace8db79842258a9fd0195fbacc3, type: 3}
-  attackVolume: 0.2
+  attackVolume: 0.5
   minComboTime: 0.1
   maxComboTime: 1
-  maxCombo: 1
+  maxCombo: 3
 --- !u!114 &1324787457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9598,6 +9599,8 @@ MonoBehaviour:
   hearts: []
   fullHeart: {fileID: 0}
   emptyHeart: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: 3a4a97db80dde448db110ac52a0894a9, type: 3}
+  hitSoundVolume: 1
   invulnerabilityTime: 1
   flashingInterval: 0.1
 --- !u!114 &1324787458
@@ -9626,7 +9629,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cddd43842577843d5b769184f44c6de3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.79
+  m_Volume: 0.7
   m_Pitch: 0.81
   Loop: 0
   Mute: 0
