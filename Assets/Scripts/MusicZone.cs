@@ -3,37 +3,31 @@ using UnityEngine;
 
 public class MusicZone : MonoBehaviour
 {
-    public float radius = 5f; // The range of the music zone. Set this in the Inspector.
-    public float fadeTime = 1f; // Time it takes for the music to fade in and out. Set this in the Inspector.
-    public AudioClip musicClip; // AudioClip to play. Set this in the Inspector.
-    public Color gizmoColor = Color.yellow; // Color of the gizmo in the Scene view. Set this in the Inspector.
-
-    private AudioSource audioSource;
-    private SphereCollider sphereCollider;
-
+    public AudioClip musicClip;
+    public float zoneRadius = 5f;  // set the default radius
+    private AudioSource _audioSource;
+    private SphereCollider _sphereCollider;
+    private bool _isPlayerInside = false;
+    
     void Start()
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.clip = musicClip;
-        audioSource.playOnAwake = false;
-        audioSource.volume = 0f;
-        
-        sphereCollider = gameObject.AddComponent<SphereCollider>();
-        sphereCollider.isTrigger = true;
-        sphereCollider.radius = radius;
-    }
+        _sphereCollider = gameObject.AddComponent<SphereCollider>();
+        _sphereCollider.radius = zoneRadius;
+        _sphereCollider.isTrigger = true;
 
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = gizmoColor;
-        Gizmos.DrawWireSphere(transform.position, radius);
+        _audioSource = gameObject.AddComponent<AudioSource>();
+        _audioSource.clip = musicClip;
+        _audioSource.volume = 0f;  // initially silent
+        _audioSource.loop = true;
+        _audioSource.Play();
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            StartCoroutine(FadeAudioToFullVolume(fadeTime));
+            _isPlayerInside = true;
+            _audioSource.volume = 1f;  // becomes audible
         }
     }
 
@@ -41,36 +35,24 @@ public class MusicZone : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            StartCoroutine(FadeAudioToZeroVolume(fadeTime));
+            _isPlayerInside = false;
+            _audioSource.volume = 0f;  // becomes silent
         }
     }
 
-    IEnumerator FadeAudioToFullVolume(float time)
+    void OnDrawGizmosSelected()
     {
-        float startVolume = 0;
-
-        while (audioSource.volume < 0)
-        {
-            audioSource.volume += startVolume * Time.deltaTime / time;
-            yield return null;
-        }
-
-        audioSource.Play();
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _sphereCollider.radius);
     }
 
-    IEnumerator FadeAudioToZeroVolume(float time)
+    // Update the collider radius when changed in the inspector
+    void OnValidate()
     {
-        float startVolume = audioSource.volume;
-
-        while (audioSource.volume > 0)
+        if (_sphereCollider != null)
         {
-            audioSource.volume -= startVolume * Time.deltaTime / time;
-
-            yield return null;
+            _sphereCollider.radius = zoneRadius;
         }
-
-        audioSource.Stop();
-        audioSource.volume = startVolume;
     }
 }
 
