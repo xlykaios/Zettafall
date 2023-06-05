@@ -102,8 +102,8 @@ Material:
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _FoamAmount: 1000
-    - _FoamCutoff: 30
-    - _FoamDensity: 5000
+    - _FoamCutoff: 10
+    - _FoamDensity: 1000
     - _FoamLines: 5
     - _FoamSpeed: 0.0005
     - _GlossMapScale: 1
@@ -116,7 +116,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RippleDensity: 1000
+    - _RippleDensity: 10000
     - _RippleLines: 3
     - _RippleSpeed: 0.5
     - _Shininess: 0.078125
