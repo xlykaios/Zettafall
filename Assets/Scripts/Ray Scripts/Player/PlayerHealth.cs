@@ -13,7 +13,7 @@ public class PlayerHealth : Health
     private AudioSource audioSource; // AudioSource component
     public float invulnerabilityTime = 1f;
     public float flashingInterval = 0.1f;
-    
+    public HealthBar_Script healthbar;
     private float invulnerabilityTimer;
     private MeshRenderer spriteRenderer;
 
@@ -26,6 +26,7 @@ public class PlayerHealth : Health
         audioSource = GetComponent<AudioSource>();
         // Set the initial volume
         audioSource.volume = hitSoundVolume;
+        healthbar.MaxHealthSet(maxHealth);
     }
 
     void Update()
@@ -43,7 +44,7 @@ public class PlayerHealth : Health
             hp -= damage;
             audioSource.PlayOneShot(hitSound); // Play the hit sound
             invulnerabilityTimer = invulnerabilityTime;
-
+            healthbar.HealthbarUpdate(hp);
             if (hp <= 0)
             {
                 hp = 0;
