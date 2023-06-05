@@ -7,8 +7,8 @@ public class MusicZone : MonoBehaviour
     public float zoneRadius = 5f;  // set the default radius
     private AudioSource _audioSource;
     private SphereCollider _sphereCollider;
-    private bool _isPlayerInside = false;
-    
+    public float fadeTime = 1f;  // adjust as needed for longer/shorter fade
+
     void Start()
     {
         _sphereCollider = gameObject.AddComponent<SphereCollider>();
@@ -26,8 +26,8 @@ public class MusicZone : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            _isPlayerInside = true;
-            _audioSource.volume = 1f;  // becomes audible
+            StopAllCoroutines();  // stop any ongoing fade
+            StartCoroutine(FadeIn(fadeTime));  // fade in
         }
     }
 
@@ -35,16 +35,44 @@ public class MusicZone : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            _isPlayerInside = false;
-            _audioSource.volume = 0f;  // becomes silent
+            StopAllCoroutines();  // stop any ongoing fade
+            StartCoroutine(FadeOut(fadeTime));  // fade out
         }
     }
 
+    IEnumerator FadeIn(float fadeTime)
+    {
+        while (_audioSource.volume < 1.0f)
+        {
+            _audioSource.volume += Time.deltaTime / fadeTime;
+
+            yield return null;
+        }
+
+        _audioSource.volume = 1f;  // ensure volume is exactly 1.0 at end of fade
+    }
+
+    IEnumerator FadeOut(float fadeTime)
+    {
+        while (_audioSource.volume > 0.0f)
+        {
+            _audioSource.volume -= Time.deltaTime / fadeTime;
+
+            yield return null;
+        }
+
+        _audioSource.volume = 0f;  // ensure volume is exactly 0.0 at end of fade
+    }
+
     void OnDrawGizmosSelected()
+{
+    if (_sphereCollider != null)
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _sphereCollider.radius);
     }
+}
+
 
     // Update the collider radius when changed in the inspector
     void OnValidate()
@@ -55,4 +83,3 @@ public class MusicZone : MonoBehaviour
         }
     }
 }
-
