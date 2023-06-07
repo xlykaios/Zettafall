@@ -103,7 +103,7 @@ Material:
     - _EnvironmentReflections: 1
     - _FoamAmount: 1000
     - _FoamCutoff: 10
-    - _FoamDensity: 4000
+    - _FoamDensity: 5000
     - _FoamLines: 5
     - _FoamSpeed: 0.0005
     - _GlossMapScale: 1
