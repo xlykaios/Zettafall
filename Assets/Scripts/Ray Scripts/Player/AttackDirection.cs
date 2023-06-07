@@ -19,7 +19,7 @@ public class AttackDirection : MonoBehaviour
         Vector3 vectorNorm = (transform.parent.position - Camera.main.transform.position).normalized;
         vectorNorm = new Vector3(vectorNorm.x, 0, vectorNorm.z);
         vectorNorm.Normalize();
-        vectorNorm *= 40;
+        vectorNorm *= 4;
         float horzCurrent = Input.GetAxisRaw("Horizontal");
         float vertCurrent = Input.GetAxisRaw("Vertical");
         /*if (horzCurrent )
