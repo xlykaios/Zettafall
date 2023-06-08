@@ -1445,7 +1445,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88420681}
-  m_LocalRotation: {x: 0.0045266384, y: 0.9902833, z: -0.033213675, w: 0.13496415}
+  m_LocalRotation: {x: 0.0045266366, y: 0.9902833, z: -0.03321365, w: 0.13496418}
   m_LocalPosition: {x: -16331.618, y: 10929.193, z: 15558.784}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16936,7 +16936,6 @@ GameObject:
   - component: {fileID: 936712671}
   - component: {fileID: 936712670}
   - component: {fileID: 936712669}
-  - component: {fileID: 936712673}
   m_Layer: 0
   m_Name: Shot Donkey
   m_TagString: Untagged
@@ -17039,25 +17038,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936712667}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &936712673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936712667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b588c087fc8c74b86ae8018e1c88cace, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 1400303719}
-  dialogueText: {fileID: 0}
-  dialogue: []
-  meshed: {fileID: 0}
-  continuebutton: {fileID: 0}
-  wordSpeed: 0
-  playerIsClose: 1
 --- !u!1 &938739781
 GameObject:
   m_ObjectHideFlags: 3
@@ -17127,7 +17107,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938739781}
-  m_LocalRotation: {x: 0.028369095, y: -0.8209682, z: 0.040946294, w: 0.5687969}
+  m_LocalRotation: {x: 0.028369095, y: -0.8209682, z: 0.040946297, w: 0.5687969}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17834,7 +17814,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100809572}
-  m_LocalRotation: {x: 0.04764622, y: -0.8581384, z: 0.08100549, w: 0.50474405}
+  m_LocalRotation: {x: 0.047646202, y: -0.85813826, z: 0.08100549, w: 0.50474405}
   m_LocalPosition: {x: -14294.325, y: 11189.963, z: 15066.935}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
