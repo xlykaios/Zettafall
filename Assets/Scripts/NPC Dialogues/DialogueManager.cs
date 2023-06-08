@@ -11,9 +11,12 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public GameObject dialogueUI;
 
+    public AudioSource typingSoundEffectSource; // Assign your AudioSource component in the inspector
+    public AudioClip[] typingSoundEffects; // Assign an array of your sound effects in the inspector
+
     private Queue<string> sentences;
 
-    public bool inDialogue;
+    public bool inDialogue { get; private set; }
 
     private void Awake()
     {
@@ -60,13 +63,21 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(TypeSentence(sentence));
     }
 
-    IEnumerator TypeSentence(string sentence)
+    IEnumerator TypeSentence (string sentence)
     {
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(0.02f);  // You can adjust the typing speed by changing the waiting time.
+            if (!char.IsWhiteSpace(letter))  // Only play the sound on non-whitespace characters
+            {
+                // Pick a random sound effect from the array
+                AudioClip typingSoundEffect = typingSoundEffects[Random.Range(0, typingSoundEffects.Length)];
+
+                typingSoundEffectSource.clip = typingSoundEffect;
+                typingSoundEffectSource.Play();
+            }
+            yield return null;
         }
     }
 
@@ -74,13 +85,6 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueUI.SetActive(false);
         inDialogue = false;
-        // Add these lines
-        nameText.text = "";
-        dialogueText.text = "";
-    }
-
-    public void HideText()
-    {
         nameText.text = "";
         dialogueText.text = "";
     }
