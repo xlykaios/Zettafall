@@ -3,13 +3,20 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
+    public GameObject interactionPrompt;
 
     private bool playerInRange = false;
 
-    public void Update()
+    private void Start()
+    {
+        interactionPrompt.SetActive(false);
+    }
+
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && playerInRange && !DialogueManager.instance.inDialogue)
         {
+            interactionPrompt.SetActive(false);
             DialogueManager.instance.StartDialogue(dialogue);
         }
 
@@ -19,21 +26,22 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             playerInRange = true;
+            interactionPrompt.SetActive(true);
         }
     }
 
-    public void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             playerInRange = false;
             DialogueManager.instance.EndDialogue();
+            interactionPrompt.SetActive(false);
         }
     }
 }
-

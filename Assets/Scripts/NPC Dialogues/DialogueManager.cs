@@ -5,35 +5,36 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public static DialogueManager instance; // Singleton instance
+    public static DialogueManager instance;
 
-    public TMP_Text nameText;
-    public TMP_Text dialogueText;
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI dialogueText;
     public GameObject dialogueUI;
-
-    public bool inDialogue = false;
 
     private Queue<string> sentences;
 
-    void Awake()  // We use Awake to set the singleton instance
+    public bool inDialogue;
+
+    private void Awake()
     {
         if (instance != null)
         {
-            Debug.LogWarning("More than one instance of DialogueManager found!");
+            Debug.LogWarning("Fix It! More than one DialogueManager instance found!");
             return;
         }
-        instance = this;
-    }
 
-    void Start()
-    {
+        instance = this;
+
         sentences = new Queue<string>();
+        dialogueUI.SetActive(false);
+        inDialogue = false;
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
         inDialogue = true;
         dialogueUI.SetActive(true);
+
         nameText.text = dialogue.name;
 
         sentences.Clear();
@@ -59,8 +60,18 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void EndDialogue()
+{
+    dialogueUI.SetActive(false);
+    inDialogue = false;
+    // Add these lines
+    nameText.text = "";
+    dialogueText.text = "";
+}
+
+
+    public void HideText()
     {
-        inDialogue = false;
-        dialogueUI.SetActive(false);
+        nameText.text = "";
+        dialogueText.text = "";
     }
 }
