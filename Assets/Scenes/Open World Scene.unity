@@ -1445,7 +1445,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88420681}
-  m_LocalRotation: {x: 0.0045266366, y: 0.9902833, z: -0.03321365, w: 0.13496418}
+  m_LocalRotation: {x: 0.0045266384, y: 0.9902833, z: -0.033213675, w: 0.13496415}
   m_LocalPosition: {x: -16331.618, y: 10929.193, z: 15558.784}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17629,7 +17629,12 @@ MonoBehaviour:
     - Good luck out there.
     postFirstConvoSentences:
     - What do you want?
-    - 
+    - Get lost.
+    - Need something?
+    - Man you are getting on my nerves.
+    - Solariel is a pretty place if you can reach it.
+    - I already said enough.
+    - Better be moving instead of keeping talking to me.
     firstConvoOver: 0
   interactionPrompt: {fileID: 240972832}
 --- !u!1 &938739781
@@ -17701,7 +17706,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938739781}
-  m_LocalRotation: {x: 0.028369095, y: -0.8209682, z: 0.040946294, w: 0.5687969}
+  m_LocalRotation: {x: 0.028369095, y: -0.8209682, z: 0.040946297, w: 0.5687969}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18408,7 +18413,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100809572}
-  m_LocalRotation: {x: 0.047646202, y: -0.85813826, z: 0.08100549, w: 0.50474405}
+  m_LocalRotation: {x: 0.04764622, y: -0.8581384, z: 0.08100549, w: 0.50474405}
   m_LocalPosition: {x: -14294.325, y: 11189.963, z: 15066.935}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

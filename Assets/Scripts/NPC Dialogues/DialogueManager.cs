@@ -42,21 +42,23 @@ public class DialogueManager : MonoBehaviour
 
     sentences.Clear();
 
-    // Choose the right sentences based on whether or not the first conversation is over
-    string[] sentencesToUse = dialogue.firstConvoOver ? dialogue.postFirstConvoSentences : dialogue.sentences;
-    foreach (string sentence in sentencesToUse)
-    {
-        sentences.Enqueue(sentence);
-    }
-
-    // If this is the first conversation, mark it as over
     if (!dialogue.firstConvoOver)
     {
+        foreach (string sentence in dialogue.sentences)
+        {
+            sentences.Enqueue(sentence);
+        }
         dialogue.firstConvoOver = true;
+    }
+    else
+    {
+        int randomIndex = Random.Range(0, dialogue.postFirstConvoSentences.Length);
+        sentences.Enqueue(dialogue.postFirstConvoSentences[randomIndex]);
     }
 
     DisplayNextSentence();
 }
+
 
 
     public void DisplayNextSentence()
