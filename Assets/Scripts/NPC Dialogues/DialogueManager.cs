@@ -34,21 +34,30 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void StartDialogue(Dialogue dialogue)
+{
+    inDialogue = true;
+    dialogueUI.SetActive(true);
+
+    nameText.text = dialogue.name;
+
+    sentences.Clear();
+
+    // Choose the right sentences based on whether or not the first conversation is over
+    string[] sentencesToUse = dialogue.firstConvoOver ? dialogue.postFirstConvoSentences : dialogue.sentences;
+    foreach (string sentence in sentencesToUse)
     {
-        inDialogue = true;
-        dialogueUI.SetActive(true);
-
-        nameText.text = dialogue.name;
-
-        sentences.Clear();
-
-        foreach (string sentence in dialogue.sentences)
-        {
-            sentences.Enqueue(sentence);
-        }
-
-        DisplayNextSentence();
+        sentences.Enqueue(sentence);
     }
+
+    // If this is the first conversation, mark it as over
+    if (!dialogue.firstConvoOver)
+    {
+        dialogue.firstConvoOver = true;
+    }
+
+    DisplayNextSentence();
+}
+
 
     public void DisplayNextSentence()
     {
