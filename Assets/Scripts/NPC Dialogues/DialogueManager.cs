@@ -11,12 +11,14 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public GameObject dialogueUI;
 
-    public AudioSource typingSoundEffectSource; // Assign your AudioSource component in the inspector
-    public AudioClip[] typingSoundEffects; // Assign an array of your sound effects in the inspector
+    public AudioSource typingSoundEffectSource;
+    public AudioClip[] typingSoundEffects;
 
     private Queue<string> sentences;
-
     public bool inDialogue { get; private set; }
+
+    // Add this line
+    public bool firstConvoIsActive = false;
 
     private void Awake()
     {
@@ -34,32 +36,27 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void StartDialogue(Dialogue dialogue)
-{
-    inDialogue = true;
-    dialogueUI.SetActive(true);
-
-    nameText.text = dialogue.name;
-
-    sentences.Clear();
-
-    if (!dialogue.firstConvoOver)
     {
+        inDialogue = true;
+        dialogueUI.SetActive(true);
+
+        nameText.text = dialogue.name;
+
+        sentences.Clear();
+
+        // If this is the first conversation, set firstConvoIsActive to true
+        if (!dialogue.firstConvoOver)
+        {
+            firstConvoIsActive = true;
+        }
+
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
-        dialogue.firstConvoOver = true;
+
+        DisplayNextSentence();
     }
-    else
-    {
-        int randomIndex = Random.Range(0, dialogue.postFirstConvoSentences.Length);
-        sentences.Enqueue(dialogue.postFirstConvoSentences[randomIndex]);
-    }
-
-    DisplayNextSentence();
-}
-
-
 
     public void DisplayNextSentence()
     {
@@ -74,17 +71,15 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(TypeSentence(sentence));
     }
 
-    IEnumerator TypeSentence (string sentence)
+    IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            if (!char.IsWhiteSpace(letter))  // Only play the sound on non-whitespace characters
+            if (!char.IsWhiteSpace(letter)) 
             {
-                // Pick a random sound effect from the array
                 AudioClip typingSoundEffect = typingSoundEffects[Random.Range(0, typingSoundEffects.Length)];
-
                 typingSoundEffectSource.clip = typingSoundEffect;
                 typingSoundEffectSource.Play();
             }
@@ -96,6 +91,10 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueUI.SetActive(false);
         inDialogue = false;
+
+        // Add this line. When the dialogue ends, set firstConvoIsActive to false
+        firstConvoIsActive = false;
+
         nameText.text = "";
         dialogueText.text = "";
     }
