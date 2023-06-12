@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 5625423785846980390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.23, y: 1.15, z: -11.491046}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 25, y: 25, z: 25}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -135,13 +135,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   player: {fileID: 0}
-  pointA: {x: 10, y: 0, z: 10}
-  pointB: {x: 20, y: 0, z: 20}
-  reachedPointA: 0
-  wanderCooldown: 5
   damage: 1
-  attackCooldown: 5
-  aggroRange: 20
-  isAware: 0
-  distanceKeep: 7
-  chargeDistance: 0
+  aggroRange: 400
+  attackCooldown: 2.5
