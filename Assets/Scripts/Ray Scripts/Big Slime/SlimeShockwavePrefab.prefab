@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff820e8e30fc4bc4a8825baf22733b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeIncrease: 80
+  sizeIncrease: 40
   attackDuration: 2
   damage: 1
 --- !u!54 &2760736998723248532
