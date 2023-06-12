@@ -23,6 +23,8 @@ public class DialogueTrigger : MonoBehaviour
         // If the player is within range and presses E, start the dialogue
         if (distanceToPlayer <= interactionRange)
         {
+            interactionPrompt.SetActive(true);
+
             if (Input.GetKeyDown(KeyCode.E) && !DialogueManager.instance.inDialogue)
             {
                 interactionPrompt.SetActive(false);
@@ -31,12 +33,6 @@ public class DialogueTrigger : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.E) && DialogueManager.instance.inDialogue)
             {
                 DialogueManager.instance.DisplayNextSentence();
-            }
-
-            // Check if the dialogue is not ongoing to show the interaction prompt
-            if (!DialogueManager.instance.inDialogue)
-            {
-                interactionPrompt.SetActive(true);
             }
         }
         else
