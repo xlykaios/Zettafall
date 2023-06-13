@@ -15,13 +15,13 @@ public class PlayerHealth : Health
     public float flashingInterval = 0.1f;
     public HealthBar_Script healthbar;
     private float invulnerabilityTimer;
-    private MeshRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         maxHealth = hp;
         UpdateHearts();
-        spriteRenderer = GetComponent<MeshRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         // Get the AudioSource component
         audioSource = GetComponent<AudioSource>();
         // Set the initial volume
