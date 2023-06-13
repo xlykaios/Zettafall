@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 9105427590808808240}
   - component: {fileID: -6351700630888475058}
   - component: {fileID: -5340459786277312213}
+  - component: {fileID: -3622804074556306119}
   m_Layer: 11
   m_Name: FodderObj
   m_TagString: Enemy
@@ -218,7 +219,7 @@ MonoBehaviour:
   minShyTime: 1
   maxShyTime: 3
   attackCooldown: 1.5
-  attackRange: 15
+  attackRange: 25
   attackPrefab: {fileID: 7728654105405562948, guid: 3923a3362a30848cf87ccd6e8e419179, type: 3}
 --- !u!114 &-6351700630888475058
 MonoBehaviour:
@@ -248,3 +249,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kbDurationMitigation: 0
   kbStrenghtMitigation: 0
+--- !u!114 &-3622804074556306119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9105427590808808248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10eae0caa78e64c58ba8d84e734affdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  billboardType: 0
+  lockX: 0
+  lockY: 0
+  lockZ: 0
+  leftDoor: {fileID: 0}
+  rightDoor: {fileID: 0}
+  doorOpenDistance: 0
+  doorOpenSpeed: 0

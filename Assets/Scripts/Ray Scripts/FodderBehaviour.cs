@@ -75,8 +75,6 @@ public class FodderBehaviour : MonoBehaviour
     //a random point where to walk to
     private void Wandering()
     {
-        var cubeRenderer = gameObject.GetComponentInChildren<Renderer>();
-         cubeRenderer.material.SetColor("_Color", Color.green);
         wanderTime += Time.deltaTime;
         //find a random point where to walk to
         if (reachedWanderDestination)
@@ -101,9 +99,6 @@ public class FodderBehaviour : MonoBehaviour
 
     private void Shy()
     {
-        var cubeRenderer = gameObject.GetComponentInChildren<Renderer>();
-        cubeRenderer.material.SetColor("_Color", Color.yellow);
-        
         //have the enemy stay at a point at a specific distance from the player 
         //we need the player's position and a generic distance to hold
         shyTime += Time.deltaTime;
@@ -146,8 +141,6 @@ public class FodderBehaviour : MonoBehaviour
     //within range of the player to attack
     private void Aggressive()
     {
-        var cubeRenderer = gameObject.GetComponentInChildren<Renderer>();
-        cubeRenderer.material.SetColor("_Color", Color.red);
         attackTimer += Time.deltaTime;
 
         changeDistance += Time.deltaTime;
