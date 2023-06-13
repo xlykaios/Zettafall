@@ -51,7 +51,7 @@ public class BullBehaviour : MonoBehaviour
 
     void Charge()
     {
-        var cubeRenderer = gameObject.GetComponent<Renderer>();
+        var cubeRenderer = gameObject.GetComponentInChildren<Renderer>();
         cubeRenderer.material.SetColor("_Color", Color.red);
         agent.destination = destination;
         if((destination - transform.position).magnitude <= 2f)

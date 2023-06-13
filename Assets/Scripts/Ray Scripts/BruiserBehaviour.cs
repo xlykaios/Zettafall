@@ -20,8 +20,8 @@ public class BruiserBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var cubeRenderer = gameObject.GetComponent<Renderer>();
-        cubeRenderer.material.SetColor("_Color", Color.black);
+        var cubeRenderer = gameObject.GetComponentInChildren<Renderer>();
+        cubeRenderer.material.SetColor("_Color", Color.white);
         player = GameObject.Find("PlayerObj").transform;
         agent = GetComponent<NavMeshAgent>();
     }
@@ -47,8 +47,8 @@ public class BruiserBehaviour : MonoBehaviour
 
     private void Defensive()
     {
-        var cubeRenderer = gameObject.GetComponent<Renderer>();
-        cubeRenderer.material.SetColor("_Color", Color.black);
+        var cubeRenderer = gameObject.GetComponentInChildren<Renderer>();
+        cubeRenderer.material.SetColor("_Color", Color.white);
         attackTimer += Time.deltaTime;
         //get to a position at a set distance from the player
         if (player.position.x < transform.position.x)
