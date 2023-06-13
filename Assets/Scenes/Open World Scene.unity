@@ -1371,7 +1371,7 @@ MonoBehaviour:
       in a world full of them....
     firstConvoOver: 0
   interactionPrompt: {fileID: 224978637}
-  interactionRange: 120
+  interactionRange: 150
 --- !u!1 &36232603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,7 +1711,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88420681}
-  m_LocalRotation: {x: 0.0045266245, y: 0.9902834, z: -0.033213742, w: 0.13496342}
+  m_LocalRotation: {x: 0.004526624, y: 0.9902834, z: -0.03321374, w: 0.13496342}
   m_LocalPosition: {x: -16331.616, y: 10929.193, z: 15558.785}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1887,7 +1887,7 @@ MonoBehaviour:
       our heroes are bandits.
     firstConvoOver: 0
   interactionPrompt: {fileID: 969179003}
-  interactionRange: 120
+  interactionRange: 150
 --- !u!1 &94494548
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,7 +2219,7 @@ MonoBehaviour:
       with awe and discovery.
     firstConvoOver: 0
   interactionPrompt: {fileID: 1249906396}
-  interactionRange: 120
+  interactionRange: 150
 --- !u!43 &109087965
 Mesh:
   m_ObjectHideFlags: 0
@@ -6331,7 +6331,7 @@ MonoBehaviour:
       of years ago. Could the Cyclone at Point Nemo be one of its remnants?
     firstConvoOver: 0
   interactionPrompt: {fileID: 1129863586}
-  interactionRange: 120
+  interactionRange: 150
 --- !u!1 &362430092
 GameObject:
   m_ObjectHideFlags: 0
@@ -13707,7 +13707,7 @@ MonoBehaviour:
       the same dark matter as the meteorite.
     firstConvoOver: 0
   interactionPrompt: {fileID: 1283317860}
-  interactionRange: 120
+  interactionRange: 150
 --- !u!1001 &619714971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15610,7 +15610,7 @@ MonoBehaviour:
     - See ya in the fields.
     firstConvoOver: 0
   interactionPrompt: {fileID: 2105161792}
-  interactionRange: 120
+  interactionRange: 150
 --- !u!64 &729972954
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19613,7 +19613,7 @@ MonoBehaviour:
     - We must find a way to stop this Cyclone. Or at least, understand it better.
     firstConvoOver: 0
   interactionPrompt: {fileID: 571142422}
-  interactionRange: 120
+  interactionRange: 150
 --- !u!1001 &934779102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19741,7 +19741,7 @@ MonoBehaviour:
     - Better be moving instead of keeping talking to me.
     firstConvoOver: 0
   interactionPrompt: {fileID: 240972832}
-  interactionRange: 120
+  interactionRange: 150
 --- !u!212 &936712674
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23977,7 +23977,7 @@ MonoBehaviour:
       as we do.
     firstConvoOver: 0
   interactionPrompt: {fileID: 2138799073}
-  interactionRange: 120
+  interactionRange: 150
 --- !u!1 &1266111333
 GameObject:
   m_ObjectHideFlags: 0
@@ -25471,7 +25471,7 @@ MonoBehaviour:
       Ambatakam, the towers, and that dreadful Crater.
     firstConvoOver: 0
   interactionPrompt: {fileID: 1662611211}
-  interactionRange: 120
+  interactionRange: 150
 --- !u!4 &1324787447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6115944658019544978, guid: 70308b9c4f36f41d5b8fd30e0fb3408f, type: 3}
@@ -31671,7 +31671,7 @@ MonoBehaviour:
     - If I could just get a bit closer to those towers... I bet they're full of secrets!
     firstConvoOver: 0
   interactionPrompt: {fileID: 470909131}
-  interactionRange: 120
+  interactionRange: 150
 --- !u!64 &1471290441
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32739,7 +32739,7 @@ MonoBehaviour:
       It haunts me.
     firstConvoOver: 0
   interactionPrompt: {fileID: 1236967030}
-  interactionRange: 120
+  interactionRange: 150
 --- !u!1 &1643889878
 GameObject:
   m_ObjectHideFlags: 0
@@ -39152,7 +39152,7 @@ MonoBehaviour:
     - Can't forge a sword strong enough to fight what's in that Crater.
     firstConvoOver: 0
   interactionPrompt: {fileID: 660301537}
-  interactionRange: 120
+  interactionRange: 150
 --- !u!1 &2000126118
 GameObject:
   m_ObjectHideFlags: 0
@@ -39556,7 +39556,7 @@ MonoBehaviour:
     - Try not to die.
     postFirstConvoSentences:
     - Need something else?
-    - There are four towers
+    - There are four towers that needs to be activated they say
     - Need something?
     - You truly are just bored like I am right?
     - Working as a knight is my biggest treasure.
@@ -39566,7 +39566,7 @@ MonoBehaviour:
       ashore.
     firstConvoOver: 0
   interactionPrompt: {fileID: 467422085}
-  interactionRange: 120
+  interactionRange: 150
 --- !u!1 &2074949270
 GameObject:
   m_ObjectHideFlags: 0
