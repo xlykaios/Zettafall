@@ -8,9 +8,11 @@ public class PlayerAttackLaser : MonoBehaviour
     private float attackTimer;
     public KeyCode attackKey;
     public GameObject laser;
+    public float attackRange;
     private LineRenderer laserLine;
     private int laserLenght = 2;
     public int damage;
+    private GameObject target;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,7 @@ public class PlayerAttackLaser : MonoBehaviour
         }    
     }
 
-    GameObject FindClosestTarget()
+    void FindClosestTarget()
     {
         GameObject[] enemies;
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -43,17 +45,20 @@ public class PlayerAttackLaser : MonoBehaviour
                 distance = currDis;
             }
         }
-        return closest;
+        if((closest.transform.position - transform.position).magnitude < attackRange){
+            target = closest;
+        }
+        
     }
 
     void Attack()
     {
-        if(attackCooldown > attackTimer)
+        FindClosestTarget();
+        if(attackCooldown > attackTimer || target == null)
         {
             return;
         }
         attackTimer = 0f;
-        GameObject target = FindClosestTarget();
         Health targetHealth = target.GetComponent<Health>();
         targetHealth.TakeDamage(damage);
         laserLine.enabled = true;
