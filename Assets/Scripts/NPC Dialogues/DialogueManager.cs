@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
     public AudioClip[] typingSoundEffects; // Assign an array of your sound effects in the inspector
 
     private Queue<string> sentences;
+    private Dialogue currentDialogue;
 
     public bool inDialogue { get; private set; }
 
@@ -33,33 +34,38 @@ public class DialogueManager : MonoBehaviour
         inDialogue = false;
     }
 
+    public Dialogue CurrentDialogue()
+    {
+        return currentDialogue;
+    }
+
     public void StartDialogue(Dialogue dialogue)
-{
-    inDialogue = true;
-    dialogueUI.SetActive(true);
-
-    nameText.text = dialogue.name;
-
-    sentences.Clear();
-
-    if (!dialogue.firstConvoOver)
     {
-        foreach (string sentence in dialogue.sentences)
+        inDialogue = true;
+        dialogueUI.SetActive(true);
+
+        currentDialogue = dialogue;
+
+        nameText.text = dialogue.name;
+
+        sentences.Clear();
+
+        if (!dialogue.firstConvoOver)
         {
-            sentences.Enqueue(sentence);
+            foreach (string sentence in dialogue.sentences)
+            {
+                sentences.Enqueue(sentence);
+            }
+            dialogue.firstConvoOver = true;
         }
-        dialogue.firstConvoOver = true;
+        else
+        {
+            int randomIndex = Random.Range(0, dialogue.postFirstConvoSentences.Length);
+            sentences.Enqueue(dialogue.postFirstConvoSentences[randomIndex]);
+        }
+
+        DisplayNextSentence();
     }
-    else
-    {
-        int randomIndex = Random.Range(0, dialogue.postFirstConvoSentences.Length);
-        sentences.Enqueue(dialogue.postFirstConvoSentences[randomIndex]);
-    }
-
-    DisplayNextSentence();
-}
-
-
 
     public void DisplayNextSentence()
     {
@@ -74,7 +80,7 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(TypeSentence(sentence));
     }
 
-    IEnumerator TypeSentence (string sentence)
+    IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
@@ -98,5 +104,7 @@ public class DialogueManager : MonoBehaviour
         inDialogue = false;
         nameText.text = "";
         dialogueText.text = "";
+        currentDialogue = null;
     }
 }
+
