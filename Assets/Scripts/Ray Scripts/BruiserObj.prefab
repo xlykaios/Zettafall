@@ -186,8 +186,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28fe64492edda414ebd9ba837e2c9b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
-  hpMax: 0
+  hp: 3
+  hpMax: 3
+  HitVFX: {fileID: 6093446064031755240, guid: e7884af8994854c52a517c4b959546a9, type: 3}
   shield: 3
   vulnerabilityPeriod: 10
 --- !u!195 &9121278379942430740

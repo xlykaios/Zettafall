@@ -207,7 +207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 4
-  hpMax: 0
+  hpMax: 4
+  HitVFX: {fileID: 6093446064031755240, guid: e7884af8994854c52a517c4b959546a9, type: 3}
 --- !u!114 &-2730358553656322598
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class BruiserAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var cubeRenderer = gameObject.GetComponent<Renderer>();
+        var cubeRenderer = gameObject.GetComponentInChildren<Renderer>();
         cubeRenderer.material.SetColor("_Color", Color.red);
         player = GameObject.Find("PlayerObj").GetComponent<Transform>();
         transform.LookAt(player);

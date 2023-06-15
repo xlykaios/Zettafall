@@ -53,6 +53,8 @@ public class BruiserHealth : Health
         if(!isInvulnerable)
         {
             hp -= damage;
+            Instantiate(HitVFX, gameObject.transform.position, gameObject.transform.rotation);
+
         }
     }
 

@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: a08170b153a184f55b0ca7495abf740a
+guid: c4b7b427217fa4d358426a1ae491fe9c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - HitVFX: {fileID: 6093446064031755240, guid: e7884af8994854c52a517c4b959546a9, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
