@@ -106,5 +106,12 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         currentDialogue = null;
     }
-}
 
+    public void Interact()
+    {
+        if (inDialogue)
+        {
+            DisplayNextSentence();
+        }
+    }
+}

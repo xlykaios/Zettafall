@@ -1,43 +1,29 @@
 using System.Collections;
-//using System.Numerics;
 using UnityEngine;
 
-public class misonosmerdato : MonoBehaviour
+public class MobilePlayerController : MonoBehaviour
 {
+    public Joystick joystick;
+    public JumpButton jumpButton;
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
     public float gravity = -9.81f;
     public float flipDuration = 0.2f;
     private CharacterController controller;
-    //private Animator anim;
     private bool isGrounded;
     private Vector3 velocity;
     private float previousHorizontalInput;
     private bool isFlipping = false;
-    public Camera actualCamera;
     Vector3 Cforward;
     Vector3 Cright;
-   
+    
     void Start()
     {
-        
         controller = GetComponent<CharacterController>();
-    //    anim = GetComponent<Animator>();
         previousHorizontalInput = 0;
         Cforward = new Vector3(0,0,0);
         Cright = new Vector3(0, 0, 0);
-
-MobilePlayerController mobileController = GetComponent<MobilePlayerController>();
-
-    #if UNITY_ANDROID || UNITY_IOS
-    mobileController.enabled = true;
-    this.enabled = false;
-    #else
-    mobileController.enabled = false;
-    this.enabled = true;
-    #endif
-    
-}
+    }
 
     void Update()
     {
@@ -48,14 +34,12 @@ MobilePlayerController mobileController = GetComponent<MobilePlayerController>()
             velocity.y = -0.5f;
         }
 
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
-        float moveVertical = Input.GetAxisRaw("Vertical");
-      //  anim.SetFloat("Speed", Mathf.Abs(moveHorizontal) + Mathf.Abs(moveVertical));
+        float moveHorizontal = (joystick.InputVector.sqrMagnitude > 0) ? joystick.InputVector.x : Input.GetAxisRaw("Horizontal");
+        float moveVertical = (joystick.InputVector.sqrMagnitude > 0) ? joystick.InputVector.y : Input.GetAxisRaw("Vertical");
 
-        if (isGrounded && Input.GetButtonDown("Jump"))
+        if (isGrounded && (jumpButton.isPressed || Input.GetButtonDown("Jump")))
         {
             velocity.y = jumpForce;
-        //    anim.SetBool("IsJumping", true);
         }
 
         // Apply gravity
@@ -69,13 +53,12 @@ MobilePlayerController mobileController = GetComponent<MobilePlayerController>()
     }
 
     void FixedUpdate() {
-
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
-        float moveVertical = Input.GetAxisRaw("Vertical");
+        float moveHorizontal = (joystick.InputVector.sqrMagnitude > 0) ? joystick.InputVector.x : Input.GetAxisRaw("Horizontal");
+        float moveVertical = (joystick.InputVector.sqrMagnitude > 0) ? joystick.InputVector.y : Input.GetAxisRaw("Vertical");
 
         if (Camera.main != null)
         {
-            Cforward =  Camera.main.transform.forward;
+            Cforward = Camera.main.transform.forward;
             Cright = Camera.main.transform.right;
             Cforward.y = 0;
             Cright.y = 0;
@@ -93,7 +76,6 @@ MobilePlayerController mobileController = GetComponent<MobilePlayerController>()
         }
     }
 
-    
     private void Flip(float moveHorizontal)
     {
         if (moveHorizontal != 0 && Mathf.Sign(moveHorizontal) != Mathf.Sign(previousHorizontalInput))
@@ -105,7 +87,10 @@ MobilePlayerController mobileController = GetComponent<MobilePlayerController>()
 
     public bool IsMoving()
     {
-        return Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0.1f || Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0.1f;
+        float moveHorizontal = (joystick.InputVector.sqrMagnitude > 0) ? joystick.InputVector.x : Input.GetAxisRaw("Horizontal");
+        float moveVertical = (joystick.InputVector.sqrMagnitude > 0) ? joystick.InputVector.y : Input.GetAxisRaw("Vertical");
+
+        return Mathf.Abs(moveHorizontal) > 0.1f || Mathf.Abs(moveVertical) > 0.1f;
     }
 
     IEnumerator HeadBob()
@@ -142,7 +127,4 @@ MobilePlayerController mobileController = GetComponent<MobilePlayerController>()
         isFlipping = false;
     }
 }
-
-
-
 
