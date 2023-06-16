@@ -27,7 +27,7 @@ public class PlayerAttack : MonoBehaviour
         attackTimer += Time.deltaTime;
 
         // Check for attack key press
-        if (Input.GetKeyDown(KeyCode.J)) // Add the KeyCode you want to use for attack
+        if (Input.GetKeyDown(KeyCode.Mouse0)) // Add the KeyCode you want to use for attack
         {
             Attack();
         }
